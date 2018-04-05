@@ -1,4 +1,4 @@
-public class PublicTransport {
+public abstract class PublicTransport {
     private String id;
     private int count;
 
@@ -18,13 +18,12 @@ public class PublicTransport {
         return count;
     }
 
-    public void rideTag(){
-
+    public void rideTag(TransportCard card){
+        int money = card.getMoney() - 1050;
+        card.setMoney(money);
     }
 
-    public void getOffTag(){
-
-    }
+    public abstract void getOffTag(PublicTransport card);
 
     public void printCalculate(){
 

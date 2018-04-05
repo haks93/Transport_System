@@ -2,70 +2,38 @@ import java.util.*;
 
 public class TransportCard {
 
-	String name;
-	int money;
-	int rideLocation;
-	boolean inandout;
+	private String name;
+	private int money;
+	private int rideLocation;
+	private boolean inAndOut;
 
 	public TransportCard(String name){
 		this.name = name;
 		this.money = 0;
-		this.inandout = false;
+		this.inAndOut = false;
 		this.rideLocation = 0;
+	}
+	public void setMoney(int money){
+		this.money = money;
 	}
 
 	public int getMoney() {
 		return money;
 	}
 
+	public void setRideLocation(PublicTransport pt) {
+		this.rideLocation = Integer.parseInt(pt.getId());
+	}
+
 	public boolean isInandout() {
-		return inandout;
+		return inAndOut;
 	}
 
-	public void reCharge() {
-
-		int money = 0;
-
-		try{
-			Scanner sc = new Scanner(System.in);
-			money = sc.nextInt();
-		}catch (Exception e){
-			e.getStackTrace();
-		}
-
+	public void reCharge(int money) {
 		this.money += money;
-	}
-	
-	public int ride() {
-		money = money - 1050;
-		
-		return money;
-	}
-	
-	public int takeOff(int money, int startlocation, int endlocation) {
-		int distence = startlocation - endlocation;
-		
-		if(distence<0) {
-			distence = -distence;
-		}
-		
-		if(distence>1) {
-			money = money - 100*distence;
-		}
-		
-		return money;
 	}
 	
 	public void checkMoney() {
 		System.out.println(money);
 	}
-	
-	/////////////// 새 객체를 만들면 거긴 값이 없어서 의미가 없음, 값이 있는 객체를 아규먼트로 받아와야함
-	public int checkLocation(PublicTransport pt) {
-
-		rideLocation = Integer.parseInt(pt.getId());
-		
-		return rideLocation;
-	}
-	
 }

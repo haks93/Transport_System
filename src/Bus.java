@@ -6,12 +6,16 @@ public class Bus extends PublicTransport {
     }
 
     @Override
-    public void getOffTag() {
-        super.getOffTag();
+    public void getOffTag(PublicTransport card) {
+
     }
 
     @Override
-    public void rideTag() {
-        super.rideTag();
+    public void rideTag(TransportCard card) {
+        if(card.getMoney() < 1050 + 600){
+            System.out.println("reject riding");
+        }else{
+            super.rideTag(card);
+        }
     }
 }
