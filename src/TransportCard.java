@@ -1,23 +1,42 @@
-package PTS2;
 import java.util.*;
 
 public class TransportCard {
 
-	String name; // »ç¿ëÀÚ ÀÌ¸§
-	int money = 0; // ±³ÅëÄ«µåÀÇ ÀÜ¾×
-	int rideLocation; // ½ÂÂ÷ À§Ä¡
-	boolean inandout; // ÇöÀç ½ÂÇÏÂ÷ »óÅÂ ~ Å¸ÀÖ´Â »óÅÂÀÎ°¡ ¾Æ´Ñ°¡
-	
-	public int reCharge() {
-		Scanner sc = new Scanner(System.in);
-		int M = sc.nextInt();
-		
-		money = money + M;
-		
+	String name;
+	int money;
+	int rideLocation;
+	boolean inandout;
+
+	public TransportCard(String name){
+		this.name = name;
+		this. money = 0;
+		this. inandout = false;
+		this. rideLocation = 0;
+	}
+
+	public int getMoney() {
 		return money;
 	}
+
+	public boolean isInandout() {
+		return inandout;
+	}
+
+	public void reCharge() {
+
+		int money = 0;
+
+		try{
+			Scanner sc = new Scanner(System.in);
+			money = sc.nextInt();
+		}catch (Exception e){
+			e.getStackTrace();
+		}
+
+		this.money += money;
+	}
 	
-	public int ride(int money) {
+	public int ride() {
 		money = money - 1050;
 		
 		return money;
@@ -41,15 +60,10 @@ public class TransportCard {
 		System.out.println(money);
 	}
 	
-	public boolean rideOrNot() {
-		return inandout;
-	}
-	
-	public int checkLocation() {
-		PublicTransport pt = new PublicTransport();
-		
-		String a = pt.getId();
-		rideLocation = Integer.parseInt(a);
+	/////////////// ìƒˆ ê°ì²´ë¥¼ ë§Œë“¤ë©´ ê±°ê¸´ ê°’ì´ ì—†ì–´ì„œ ì˜ë¯¸ê°€ ì—†ìŒ, ê°’ì´ ìˆëŠ” ê°ì²´ë¥¼ ì•„ê·œë¨¼íŠ¸ë¡œ ë°›ì•„ì™€ì•¼í•¨
+	public int checkLocation(PublicTransport pt) {
+
+		rideLocation = Integer.parseInt(pt.getId());
 		
 		return rideLocation;
 	}

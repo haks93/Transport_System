@@ -1,8 +1,8 @@
 public class Bus extends PublicTransport {
 
     public Bus(String id){
-        super.setId(id);
-        super.setCount(0);
+        setId(id);
+        setCount(0);
     }
 
     @Override
