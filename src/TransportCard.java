@@ -9,9 +9,9 @@ public class TransportCard {
 
 	public TransportCard(String name){
 		this.name = name;
-		this. money = 0;
-		this. inandout = false;
-		this. rideLocation = 0;
+		this.money = 0;
+		this.inandout = false;
+		this.rideLocation = 0;
 	}
 
 	public int getMoney() {
