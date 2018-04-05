@@ -12,10 +12,18 @@ public class Bus extends PublicTransport {
 
     @Override
     public void rideTag(TransportCard card) {
-        if(card.getMoney() < 1050 + 600){
-            System.out.println("reject riding");
+        if(card.isInAndOut()){
+            switch (card.getBusOrMetro()){
+                case 1:
+                    card.setMoney(card.getMoney() - 1750);
+                    break;
+                case 2:
+                    card.setMoney(card.getMoney() - 1650);
+                    break;
+            }
         }else{
-            super.rideTag(card);
+            //TODO: if(현재 시간 - 카드.시간 <= 15 && 지하철) 환승, 나머지 일반 탑승
+            
         }
     }
 }

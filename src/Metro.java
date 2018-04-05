@@ -5,5 +5,8 @@ public class Metro extends PublicTransport{
         setCount(0);
     }
 
+    @Override
+    public void getOffTag(PublicTransport card) {
 
+    }
 }
