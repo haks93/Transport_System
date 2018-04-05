@@ -25,12 +25,41 @@ public class TransportCard {
 		return money;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+
+	public int getTime() {
+		return time;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+
+	public int getBusOrMetro() {
+		return busOrMetro;
+	}
+
+	public void setBusOrMetro(int busOrMetro) {
+		this.busOrMetro = busOrMetro;
+	}
+
+	public void setInAndOut(boolean inAndOut) {
+		this.inAndOut = inAndOut;
+	}
+
+	public boolean isInAndOut() {
+		return inAndOut;
+	}
+
 	public void setRideLocation(PublicTransport pt) {
 		this.rideLocation = Integer.parseInt(pt.getId());
 	}
 
-	public boolean isInandout() {
-		return inAndOut;
+	public int getRideLocation() {
+		return rideLocation;
 	}
 
 	public void reCharge(int money) {
