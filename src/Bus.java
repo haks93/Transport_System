@@ -7,6 +7,12 @@ public class Bus extends PublicTransport {
 
     @Override
     public void getOffTag(TransportCard card) {
+        long time = System.currentTimeMillis();
+        time = (time - card.getTime())/30000;
+        int pay = (int)time * 100;
+        if(pay > 700)
+            pay = 700;
+        card.setMoney(card.getMoney() - pay);
         card.setInAndOut(false);
         card.setTime(System.currentTimeMillis());
     }
