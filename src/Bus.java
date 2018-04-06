@@ -25,7 +25,7 @@ public class Bus extends PublicTransport {
         }else{
             //TODO: if(현재 시간 - 카드.시간 <= 15 && 지하철) 환승, 나머지 일반 탑승
             if(System.currentTimeMillis() - card.getTime() <= 15000 && card.getBusOrMetro() == 2){
-                checkMoney(card, 0);
+                checkMoney(card, 700);
             }else{
                 checkMoney(card, 1050);
             }
