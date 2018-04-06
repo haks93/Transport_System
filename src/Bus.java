@@ -33,7 +33,7 @@ public class Bus extends PublicTransport {
             if(System.currentTimeMillis() - card.getTime() <= 15000 && card.getBusOrMetro() == 2){
                 checkMoney(card, 700);
             }else{
-                checkMoney(card, 1050);
+                checkMoney(card, 1750);
             }
         }
     }
