@@ -34,7 +34,7 @@ public class TransportCard {
 		return tagTime;
 	}
 
-	public void setTime(int time) {
+	public void setTime(long time) {
 		this.tagTime = time;
 	}
 
@@ -54,8 +54,8 @@ public class TransportCard {
 		return inAndOut;
 	}
 
-	public void setRideLocation(PublicTransport pt) {
-		this.rideLocation = Integer.parseInt(pt.getId());
+	public void setRideLocation(String id) {
+		this.rideLocation = Integer.parseInt(id);
 	}
 
 	public int getRideLocation() {

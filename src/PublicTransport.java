@@ -23,7 +23,7 @@ public abstract class PublicTransport {
         card.setMoney(money);
     }
 
-    public abstract void getOffTag(PublicTransport card);
+    public abstract void getOffTag(TransportCard card);
 
     public void printCalculate(){
 
