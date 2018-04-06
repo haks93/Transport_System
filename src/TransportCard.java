@@ -6,7 +6,7 @@ public class TransportCard {
 	private int money;
 	private int rideLocation;
 	private boolean inAndOut;
-	private int time;
+	private long time;
 	private int busOrMetro; //0: 최초 1: 버스  2: 지하철
 
 	public TransportCard(String name){
@@ -30,7 +30,7 @@ public class TransportCard {
 	}
 
 
-	public int getTime() {
+	public long getTime() {
 		return time;
 	}
 
