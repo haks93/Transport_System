@@ -23,7 +23,8 @@ public class Metro extends PublicTransport{
             if(System.currentTimeMillis() - card.getTime() <= 15000 && card.getBusOrMetro() == 1){
                 CheckandPayMoney(card, 700, 0);
             }else{
-                CheckandPayMoney(card, 1050, 1050);
+                CheckandPayMoney(card, 1050,
+                        1050);
             }
         }
     }

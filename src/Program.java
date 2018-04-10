@@ -8,6 +8,12 @@ public class Program {
         TransportCard card = new TransportCard("1");
         card.reCharge(5000);
         Scanner scan = new Scanner(System.in);
+        ArrayList<Metro> metroList = new ArrayList<Metro>();
+
+        for(int i = 0; i < 5; i++){
+            metroList.add(new Metro(Integer.toString(i)));
+        }
+
         String a;
         int b;
         while(true){
@@ -23,6 +29,7 @@ public class Program {
                     break;
                 case "re":
                     b = scan.nextInt();
+                    scan.nextLine();
                     card.reCharge(b);
                     System.out.println(card.getMoney());
                     break;
